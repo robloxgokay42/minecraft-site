@@ -5,19 +5,46 @@
 }
 
 body {
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  color: #f8fafc;
+  background: radial-gradient(circle at center, #0ff6ff33, #000000);
+  color: #e0f7fa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Neon animasyon arka plan */
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 30% 30%, #00fff7aa, transparent 25%),
+    radial-gradient(circle at 70% 70%, #00f9ffcc, transparent 30%);
+  animation: neonGlow 10s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes neonGlow {
+  0% {
+    filter: blur(10px) brightness(0.8);
+  }
+  100% {
+    filter: blur(15px) brightness(1.2);
+  }
 }
 
 header {
-  background-color: #111827;
-  padding: 15px 30px;
+  background-color: #000a12cc;
+  padding: 20px 30px;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 10;
+  box-shadow: 0 0 12px #00f9ff88;
 }
 
 nav {
@@ -27,26 +54,31 @@ nav {
 }
 
 .logo {
-  font-weight: 700;
-  font-size: 1.8rem;
-  color: #fbbf24;
+  font-weight: 900;
+  font-size: 2rem;
+  color: #00fff7;
+  text-shadow: 0 0 10px #00fff7;
+  letter-spacing: 2px;
 }
 
 .menu {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 30px;
 }
 
 .menu li a {
-  color: #cbd5e1;
+  color: #a0e7f7;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.1rem;
   transition: color 0.3s ease;
+  text-shadow: 0 0 4px #00ffff;
 }
 
 .menu li a:hover {
-  color: #fbbf24;
+  color: #00f9ff;
+  text-shadow: 0 0 15px #00f9ff;
 }
 
 main {
@@ -54,68 +86,74 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 15px;
-  color: #fbbf24;
-  text-shadow: 0 0 8px #fbbf24;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #00ffff;
+  text-shadow: 0 0 15px #00f9ff;
 }
 
 .hero .ip,
 .hero .version,
 .hero .description {
-  font-size: 1.2rem;
-  margin-bottom: 12px;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px #00ccccaa;
 }
 
 .btn {
-  background-color: #fbbf24;
+  background-color: #00f9ff;
   border: none;
-  padding: 14px 30px;
-  font-weight: 700;
-  font-size: 1.2rem;
+  padding: 16px 40px;
+  font-weight: 900;
+  font-size: 1.3rem;
   cursor: pointer;
-  border-radius: 6px;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
+  border-radius: 10px;
+  margin-top: 25px;
+  box-shadow: 0 0 12px #00ffffaa;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #d97706;
+  background-color: #00c5cc;
+  box-shadow: 0 0 20px #00ffffdd;
 }
 
 .online-count {
-  margin-top: 20px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #a3a3a3;
+  margin-top: 30px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #00f9ffdd;
+  text-shadow: 0 0 15px #00f9ff;
 }
 
 footer {
-  background-color: #111827;
+  background-color: #000a12cc;
   text-align: center;
-  padding: 15px 0;
-  font-size: 0.9rem;
-  color: #94a3b8;
+  padding: 18px 0;
+  font-size: 1rem;
+  color: #00e5ffcc;
+  box-shadow: 0 0 8px #00f9ffbb;
+  user-select: none;
 }
 
 /* Responsive */
 
 @media (max-width: 768px) {
   .menu {
-    display: none; /* Basit mobil gizleme, sonra hamburger ekleyebiliriz */
+    display: none; /* Mobil için hamburger ekleyebiliriz ileride */
   }
   .logo {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
   main {
     padding: 40px 15px;
   }
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 }
