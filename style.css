@@ -1,159 +1,431 @@
 /* Reset ve temel ayarlar */
 * {
-  margin: 0; padding: 0; box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* İsteğe bağlı olarak Google Font eklediysen: */
+  /* font-family: 'Montserrat', sans-serif; */
 }
 
 body {
-  background: radial-gradient(circle at center, #0ff6ff33, #000000);
-  color: #e0f7fa;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  position: relative;
+  background: radial-gradient(circle at center, #0ff6ff33, #000000);
+  color: #e0f7fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* Neon animasyon arka plan */
 body::before {
-  content: '';
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background:
-    radial-gradient(circle at 30% 30%, #00fff7aa, transparent 25%),
-    radial-gradient(circle at 70% 70%, #00f9ffcc, transparent 30%);
-  animation: neonGlow 10s ease-in-out infinite alternate;
-  z-index: -1;
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 30% 30%, #00fff7aa, transparent 25%),
+    radial-gradient(circle at 70% 70%, #00f9ffcc, transparent 30%);
+  animation: neonGlow 10s ease-in-out infinite alternate;
+  z-index: -1;
 }
 
 @keyframes neonGlow {
-  0% {
-    filter: blur(10px) brightness(0.8);
-  }
-  100% {
-    filter: blur(15px) brightness(1.2);
-  }
+  0% {
+    filter: blur(10px) brightness(0.8);
+  }
+  100% {
+    filter: blur(15px) brightness(1.2);
+  }
 }
 
 header {
-  background-color: #000a12cc;
-  padding: 20px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 0 12px #00f9ff88;
+  background-color: #000a12cc;
+  padding: 20px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 0 12px #00f9ff88;
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-  font-weight: 900;
-  font-size: 2rem;
-  color: #00fff7;
-  text-shadow: 0 0 10px #00fff7;
-  letter-spacing: 2px;
+  font-weight: 900;
+  font-size: 2rem;
+  color: #00fff7;
+  text-shadow: 0 0 10px #00fff7;
+  letter-spacing: 2px;
 }
 
 .menu {
-  list-style: none;
-  display: flex;
-  gap: 30px;
+  list-style: none;
+  display: flex;
+  gap: 30px;
 }
 
 .menu li a {
-  color: #a0e7f7;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-  text-shadow: 0 0 4px #00ffff;
+  color: #a0e7f7;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  text-shadow: 0 0 4px #00ffff;
 }
 
 .menu li a:hover {
-  color: #00f9ff;
-  text-shadow: 0 0 15px #00f9ff;
+  color: #00f9ff;
+  text-shadow: 0 0 15px #00f9ff;
 }
 
 main {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 20px;
-  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Bölümler alt alta gelsin diye */
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero {
+  max-width: 900px;
+  margin-bottom: 60px; /* Diğer bölümlerle arasına boşluk */
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  color: #00ffff;
-  text-shadow: 0 0 15px #00f9ff;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #00ffff;
+  text-shadow: 0 0 15px #00f9ff;
 }
 
 .hero .ip,
 .hero .version,
 .hero .description {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-  text-shadow: 0 0 8px #00ccccaa;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px #00ccccaa;
 }
 
 .btn {
-  background-color: #00f9ff;
-  border: none;
-  padding: 16px 40px;
-  font-weight: 900;
-  font-size: 1.3rem;
-  cursor: pointer;
-  border-radius: 10px;
-  margin-top: 25px;
-  box-shadow: 0 0 12px #00ffffaa;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #00f9ff;
+  border: none;
+  padding: 16px 40px;
+  font-weight: 900;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 25px;
+  box-shadow: 0 0 12px #00ffffaa;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  text-decoration: none; /* A etiketleri için */
+  color: #000a12; /* Buton rengine uygun yazı rengi */
 }
 
 .btn:hover {
-  background-color: #00c5cc;
-  box-shadow: 0 0 20px #00ffffdd;
+  background-color: #00c5cc;
+  box-shadow: 0 0 20px #00ffffdd;
+  transform: translateY(-3px);
 }
 
 .online-count {
-  margin-top: 30px;
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #00f9ffdd;
-  text-shadow: 0 0 15px #00f9ff;
+  margin-top: 30px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #00f9ffdd;
+  text-shadow: 0 0 15px #00f9ff;
 }
+
+/* Yeni bölümler için genel stil */
+.info-section {
+  background-color: #000a12dd;
+  padding: 40px;
+  margin: 30px auto;
+  border-radius: 15px;
+  max-width: 900px;
+  box-shadow: 0 0 20px #00fff799;
+  text-align: left; /* Metin sola hizalı olsun */
+}
+
+.info-section h2 {
+  font-size: 2.5rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00f9ff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.info-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.info-section a {
+  color: #00f9ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.info-section a:hover {
+  color: #00c5cc;
+}
+
+/* VIP Paketleri */
+.vip-packages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.package-card {
+  background-color: #001f3f;
+  border-radius: 15px;
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 15px #00fff766;
+  border: 2px solid #00fff7;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px #00fff7aa;
+}
+
+.package-card h3 {
+  font-size: 1.8rem;
+  color: #00f9ff;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px #00f9ff;
+}
+
+.package-card .price {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #39ff14; /* Yeşil neon */
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #39ff14;
+}
+
+.package-card .duration {
+  font-size: 1rem;
+  color: #a0e7f7;
+  margin-bottom: 20px;
+}
+
+.package-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.package-card ul li {
+  font-size: 1rem;
+  padding: 8px 0;
+  border-bottom: 1px dashed #00b3cc;
+  color: #e0f7fa;
+}
+
+.package-card ul li:last-child {
+  border-bottom: none;
+}
+
+.package-card .buy-btn {
+  display: inline-block;
+  margin-top: 0;
+  font-size: 1.1rem;
+  padding: 12px 25px;
+}
+
+/* Kurallar Listesi */
+.rule-list {
+  list-style: decimal; /* Numaralı liste */
+  padding-left: 25px;
+  margin-top: 20px;
+}
+
+.rule-list li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #e0f7fa;
+}
+
+/* SSS Bölümü */
+.faq-container {
+  margin-top: 30px;
+}
+
+.faq-item {
+  background-color: #001a2b;
+  border: 1px solid #00f9ff88;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq-question {
+  padding: 18px 25px;
+  background-color: #002d4d;
+  color: #00ffff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  text-shadow: 0 0 5px #00ffff88;
+}
+
+.faq-question:hover {
+  background-color: #003a60;
+}
+
+.faq-question::after {
+  content: '+';
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+  content: '-';
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 25px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+  color: #c0eaff;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px; /* Yeterince büyük bir değer */
+  padding: 20px 25px;
+}
+
+.faq-answer p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.faq-answer ol {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.faq-answer ol li {
+  margin-bottom: 5px;
+}
+
+.faq-answer code {
+  background-color: #000c14;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #39ff14;
+  font-family: monospace;
+}
+
 
 footer {
-  background-color: #000a12cc;
-  text-align: center;
-  padding: 18px 0;
-  font-size: 1rem;
-  color: #00e5ffcc;
-  box-shadow: 0 0 8px #00f9ffbb;
-  user-select: none;
+  background-color: #000a12cc;
+  text-align: center;
+  padding: 18px 0;
+  font-size: 1rem;
+  color: #00e5ffcc;
+  box-shadow: 0 0 8px #00f9ffbb;
+  user-select: none;
+  margin-top: auto; /* Footer'ı sayfanın en altına itmek için */
 }
 
-/* Responsive */
+footer a {
+  color: #00e5ff;
+  text-decoration: none;
+  margin: 0 5px;
+}
 
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* Responsive */
 @media (max-width: 768px) {
-  .menu {
-    display: none; /* Mobil için hamburger ekleyebiliriz ileride */
-  }
-  .logo {
-    font-size: 1.7rem;
-  }
-  main {
-    padding: 40px 15px;
-  }
-  .hero h1 {
-    font-size: 2.2rem;
-  }
+  .menu {
+    /* Hamburger menü için JavaScript kullanılabilir veya basitçe gizlenebilir */
+    display: none;
+  }
+  .logo {
+    font-size: 1.7rem;
+  }
+  main {
+    padding: 40px 15px;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero .ip,
+  .hero .version,
+  .hero .description,
+  .online-count {
+    font-size: 1.1rem;
+  }
+  .btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+  }
+  .info-section {
+    padding: 25px;
+    margin: 20px auto;
+  }
+  .info-section h2 {
+    font-size: 2rem;
+  }
+  .vip-packages {
+    flex-direction: column;
+    align-items: center;
+  }
+  .package-card {
+    width: 90%; /* Mobil görünümde daha geniş */
+    margin-bottom: 20px;
+  }
+  .faq-question {
+    font-size: 1.1rem;
+    padding: 15px 20px;
+  }
+  .faq-answer {
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
 }
