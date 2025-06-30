@@ -1,188 +1,286 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Senta Survival - En İyi Minecraft Hayatta Kalma Sunucusu</title>
-  <link rel="stylesheet" href="style.css" />
-    </head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>👑 Senta Survival - En İyi Minecraft Hayatta Kalma Sunucusu 👑</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">Senta Survival</div>
-      <ul class="menu">
-        <li><a href="#hero">Ana Sayfa</a></li>
-        <li><a href="#about">Hakkımızda</a></li>
-        <li><a href="#store">Mağaza</a></li>
-        <li><a href="#rules">Kurallar</a></li>
-        <li><a href="https://discord.gg/yourdiscordlink" target="_blank">Discord</a></li>
-        <li><a href="#faq">SSS</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="background-overlay"></div>
+    <div class="gradient-glow top-left"></div>
+    <div class="gradient-glow bottom-right"></div>
 
-  <main>
-    <section class="hero" id="hero">
-      <h1>👑 Senta Survival'a Hoş Geldiniz!</h1>
-      <p class="ip">Sunucu IP: <strong>rigosurvival.aternos.me:61460</strong></p>
-      <p class="version">Minecraft Sürüm: <strong>1.16.5 (ve üzeri sürümlerle uyumlu)</strong></p>
-      <p class="description">
-        Hayatta kal, kaynakları yönet, düşmanlarına karşı koy ve kendi dünyanı yarat!
-        Topluluğumuza katılın ve eşsiz bir Minecraft deneyimi yaşayın.
-      </p>
-      <button class="btn play-btn" onclick="copyIp()">IP Kopyala ve Hemen Oyna</button>
-      <p class="online-count">Çevrimiçi oyuncu sayısı: <span id="online">Yükleniyor...</span></p>
-    </section>
+    <header>
+        <nav class="container">
+            <div class="logo">Senta Survival</div>
+            <ul class="menu" id="mainMenu">
+                <li><a href="#hero">Ana Sayfa</a></li>
+                <li><a href="#about">Hakkımızda</a></li>
+                <li><a href="#features">Özellikler</a></li> <li><a href="#store">Mağaza</a></li>
+                <li><a href="#rules">Kurallar</a></li>
+                <li><a href="https://discord.gg/SentaSurvival" target="_blank" class="discord-btn-nav"><i class="fab fa-discord"></i> Discord</a></li>
+                <li><a href="#faq">SSS</a></li>
+            </ul>
+            <div class="hamburger" id="hamburgerMenu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
 
-    <section class="info-section" id="about">
-      <h2>Hakkımızda</h2>
-      <p>Senta Survival, oyunculara en saf ve eğlenceli Minecraft hayatta kalma deneyimini sunmak için kurulmuş özel bir sunucudur. 2025 yılında tamamen yenilenen altyapımız ve güncel özelliklerimizle, her seviyeden oyuncunun keyif alabileceği bir ortam sağlıyoruz. Amacımız, adil ve rekabetçi bir oyun alanı sunarken, aynı zamanda güçlü bir topluluk bağı oluşturmaktır.</p>
-      <p>Sunucumuzda sürekli güncellemeler, yeni etkinlikler ve topluluk odaklı yenilikler bulacaksınız. Geliştirici ekibimiz ve yönetim kadromuz, siz değerli oyuncularımızın geri bildirimleriyle sunucuyu daha da ileriye taşımak için çalışmaktadır. Hayatta kalma becerilerinizi test edin, kendi krallığınızı kurun ve Senta Survival ailesinin bir parçası olun!</p>
-      <p>Daha fazla bilgi ve özel duyurular için Discord sunucumuza katılmayı unutmayın!</p>
-      <a href="https://discord.gg/yourdiscordlink" target="_blank" class="btn discord-btn">Discord'a Katıl</a>
-    </section>
+    <main>
+        <section class="hero-section" id="hero">
+            <div class="container">
+                <h1 class="hero-title">👑 Senta Survival'a Hoş Geldiniz! 👑</h1>
+                <p class="hero-subtitle">Hayatta kalma maceranın başladığı yer.</p>
 
-    <section class="info-section" id="store">
-      <h2>Mağaza & VIP Paketleri</h2>
-      <p>Senta Survival deneyiminizi daha da geliştirmek için özel VIP paketlerimize göz atın! Bu paketler, oyun içi avantajlar, özel yetkiler ve topluluğa destek olma fırsatı sunar.</p>
-      <div class="vip-packages">
-        <div class="package-card basic">
-          <h3>Başlangıç VIP</h3>
-          <p class="price">Ücretsiz</p>
-          <p class="duration">7 Gün</p>
-          <ul>
-            <li>Özel chat rengi</li>
-            <li>Spawn koruması</li>
-            <li>/kit starter komutu</li>
-            <li>VIP chat odası erişimi</li>
-            <li>2x günlük para ödülü</li>
-          </ul>
-          <button class="btn buy-btn">Detayları Gör</button>
-        </div>
-        <div class="package-card premium">
-          <h3>Premium VIP</h3>
-          <p class="price">₺99</p>
-          <p class="duration">30 Gün</p>
-          <ul>
-            <li>Tüm temel VIP özellikleri</li>
-            <li>Premium chat odası</li>
-            <li>Özel kostüm seti</li>
-            <li>5x günlük para ödülü</li>
-            <li>Öncelikli destek</li>
-            <li>+1 daha fazla özellik</li>
-          </ul>
-          <button class="btn buy-btn">Satın Al</button>
-        </div>
-        <div class="package-card elite">
-          <h3>Elite VIP</h3>
-          <p class="price">₺249</p>
-          <p class="duration">30 Gün</p>
-          <ul>
-            <li>Tüm Premium özellikleri</li>
-            <li>Elite chat odası</li>
-            <li>10x günlük para ödülü</li>
-            <li>24/7 öncelikli destek</li>
-            <li>Elite bölge erişimi</li>
-            <li>+1 daha fazla özellik</li>
-          </ul>
-          <button class="btn buy-btn">Satın Al</button>
-        </div>
-      </div>
-          </section>
+                <div class="ip-info-box">
+                    <p class="ip-address">Sunucu IP: <strong>rigosurvival.aternos.me:61460</strong></p>
+                    <p class="version">Minecraft Sürüm: <strong>1.16.5 <span class="version-compatibility">(ve üzeri sürümlerle uyumlu)</span></strong></p>
+                </div>
+                
+                <p class="hero-description">
+                    Minecraft'ın gerçek hayatta kalma ruhunu hissetmek için Senta Survival'a katılın. Kendi üssünüzü kurun, kaynakları toplayın, tehlikelerle yüzleşin ve büyüyen topluluğumuzda yerinizi alın!
+                </p>
+                <button class="btn play-btn" onclick="copyIp()">IP Kopyala ve Hemen Oyna</button>
+                <p class="online-count">Çevrimiçi oyuncu sayısı: <span id="online">Yükleniyor...</span></p>
+            </div>
+        </section>
 
-    <section class="info-section" id="rules">
-      <h2>Sunucu Kuralları</h2>
-      <p>Keyifli bir oyun deneyimi için tüm oyuncularımızın aşağıdaki kurallara uyması gerekmektedir. Kurallara uymayan oyunculara uyarı, geçici veya kalıcı yasaklama uygulanabilir.</p>
-      <ul class="rule-list">
-        <li>1. Hakaret, küfür ve argo kelimelerin kullanımı yasaktır. Herkesin birbirine saygılı olması beklenir.</li>
-        <li>2. Hile, bug veya exploit kullanmak kesinlikle yasaktır. Adil oyun prensibi esastır.</li>
-        <li>3. Reklam yapmak (başka sunucu, site vb.) yasaktır.</li>
-        <li>4. Spam veya flood yapmak yasaktır. Sohbeti gereksiz yere meşgul etmeyin.</li>
-        <li>5. Başkalarını rahatsız edici inşaatlar veya davranışlarda bulunmak yasaktır.</li>
-        <li>6. Hesap güvenliğinizden siz sorumlusunuz. Hesap paylaşımı önerilmez.</li>
-        <li>7. Yönetim ekibinin kararlarına saygı gösterin. Anlaşmazlıklarda Discord üzerinden iletişime geçin.</li>
-        <li>8. Sunucu kaynaklarını aşırı kullanacak otomatik sistemler kurmak yasaktır (örn: aşırı lag yapan farm'lar).</li>
-        <li>9. Gerçek hayata dair kişisel bilgi paylaşımı yasaktır.</li>
-        <li>10. Herhangi bir kural ihlali fark ettiğinizde ekran görüntüsü veya video alarak yönetime bildirin.</li>
-      </ul>
-    </section>
+        <section class="content-section about-section" id="about">
+            <div class="container">
+                <h2 class="section-title">Hakkımızda <span class="neon-line"></span></h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Senta Survival, oyunculara en saf ve eğlenceli Minecraft hayatta kalma deneyimini sunmak için kurulmuş özel bir sunucudur. <strong>30 Haziran 2025 itibarıyla</strong> tamamen yenilenen altyapımız ve güncel özelliklerimizle, her seviyeden oyuncunun keyif alabileceği bir ortam sağlıyoruz. Amacımız, adil ve rekabetçi bir oyun alanı sunarken, aynı zamanda güçlü bir topluluk bağı oluşturmaktır.</p>
+                        <p>Sunucumuzda sürekli güncellemeler, yeni etkinlikler ve topluluk odaklı yenilikler bulacaksınız. Geliştirici ekibimiz ve yönetim kadromuz, siz değerli oyuncularımızın geri bildirimleriyle sunucuyu daha da ileriye taşımak için çalışmaktadır. Hayatta kalma becerilerinizi test edin, kendi krallığınızı kurun ve Senta Survival ailesinin bir parçası olun!</p>
+                        <p>Daha fazla bilgi ve özel duyurular için Discord sunucumuza katılmayı unutmayın!</p>
+                        <a href="https://discord.gg/SentaSurvival" target="_blank" class="btn discord-btn"><i class="fab fa-discord"></i> Discord'a Katıl</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://via.placeholder.com/400x250/000a12/00ffff?text=Senta+Survival+Görseli" alt="Senta Survival Sunucusu Görseli">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section class="info-section" id="faq">
-      <h2>Sıkça Sorulan Sorular (SSS)</h2>
-      <div class="faq-container">
-        <div class="faq-item">
-          <h3 class="faq-question">Senta Survival sunucusuna nasıl katılabilirim?</h3>
-          <div class="faq-answer">
-            <p><strong>Java Edition için:</strong></p>
-            <ol>
-              <li>Minecraft Java Edition'ı açın.</li>
-              <li>"Çok Oyunculu" (Multiplayer) seçeneğine tıklayın.</li>
-              <li>"Sunucu Ekle" (Add Server) butonuna basın.</li>
-              <li>Sunucu Adı: <code>Senta Survival</code></li>
-              <li>Sunucu Adresi: <code>rigosurvival.aternos.me:61460</code> yazın.</li>
-              <li>"Tamamlandı" (Done) diyerek sunucuyu kaydedin ve bağlanın.</li>
-            </ol>
-            <p><strong>Bedrock Edition için (Alternatif IP - Eğer destekleniyorsa):</strong></p>
-            <ol>
-              <li>Minecraft Bedrock Edition'ı açın.</li>
-              <li>"Oyna" (Play) menüsünden "Sunucular" (Servers) sekmesine gidin.</li>
-              <li>"Sunucu Ekle" (Add Server) butonuna basın.</li>
-              <li>Sunucu Adresi: <code>rigosurvival.aternos.me</code></li>
-              <li>Port: <code>61460</code> (Genellikle otomatik gelir, gelmezse manuel girin)</li>
-              <li>Sunucuyu kaydedin ve bağlanın.</li>
-            </ol>
-          </div>
-        </div>
+        <section class="content-section features-section" id="features">
+            <div class="container">
+                <h2 class="section-title">Neden Senta Survival? <span class="neon-line"></span></h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-hammer feature-icon"></i>
+                        <h3>Gelişmiş Altyapı</h3>
+                        <p>Düşük gecikme, yüksek performans ile kesintisiz bir oyun deneyimi sunuyoruz.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-users feature-icon"></i>
+                        <h3>Canlı Topluluk</h3>
+                        <p>Aktif Discord sunucumuzda diğer oyuncularla tanışın ve etkinliklere katılın.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                        <h3>Adil Oyun</h3>
+                        <p>Hile karşıtı sistemlerimizle adil ve dengeli bir oyun ortamı sağlıyoruz.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-gift feature-icon"></i>
+                        <h3>Sık Etkinlikler</h3>
+                        <p>Her hafta düzenlenen etkinlikler ve ödüllerle maceranıza renk katın.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="faq-item">
-          <h3 class="faq-question">Sunucu ücretsiz mi?</h3>
-          <div class="faq-answer">
-            <p>Evet, Senta Survival sunucusuna katılım ve temel oyun deneyimi tamamen ücretsizdir. Daha gelişmiş özellikler ve destek için VIP paketlerimizi mağazamızdan inceleyebilirsiniz.</p>
-          </div>
-        </div>
+        <section class="content-section store-section" id="store">
+            <div class="container">
+                <h2 class="section-title">Mağaza & VIP Paketleri <span class="neon-line"></span></h2>
+                <p class="section-description">Senta Survival deneyiminizi daha da geliştirmek için özel VIP paketlerimize göz atın! Bu paketler, oyun içi avantajlar, özel yetkiler ve topluluğa destek olma fırsatı sunar.</p>
+                <div class="vip-packages-grid">
+                    <div class="package-card basic">
+                        <h3>Başlangıç VIP</h3>
+                        <p class="price">Ücretsiz</p>
+                        <p class="duration">7 Gün</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Özel chat rengi</li>
+                            <li><i class="fas fa-check-circle"></i> Spawn koruması</li>
+                            <li><i class="fas fa-check-circle"></i> /kit starter komutu</li>
+                            <li><i class="fas fa-check-circle"></i> VIP chat odası erişimi</li>
+                            <li><i class="fas fa-check-circle"></i> 2x günlük para ödülü</li>
+                        </ul>
+                        <button class="btn buy-btn">Detayları Gör</button>
+                    </div>
+                    <div class="package-card premium">
+                        <h3>Premium VIP</h3>
+                        <p class="price">₺99</p>
+                        <p class="duration">30 Gün</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Tüm temel VIP özellikleri</li>
+                            <li><i class="fas fa-check-circle"></i> Premium chat odası</li>
+                            <li><i class="fas fa-check-circle"></i> Özel kostüm seti</li>
+                            <li><i class="fas fa-check-circle"></i> 5x günlük para ödülü</li>
+                            <li><i class="fas fa-check-circle"></i> Öncelikli destek</li>
+                            <li><i class="fas fa-plus-circle"></i> +1 daha fazla özellik</li>
+                        </ul>
+                        <button class="btn buy-btn">Satın Al</button>
+                    </div>
+                    <div class="package-card elite">
+                        <h3>Elite VIP</h3>
+                        <p class="price">₺249</p>
+                        <p class="duration">30 Gün</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Tüm Premium özellikleri</li>
+                            <li><i class="fas fa-check-circle"></i> Elite chat odası</li>
+                            <li><i class="fas fa-check-circle"></i> 10x günlük para ödülü</li>
+                            <li><i class="fas fa-check-circle"></i> 24/7 öncelikli destek</li>
+                            <li><i class="fas fa-check-circle"></i> Elite bölge erişimi</li>
+                            <li><i class="fas fa-plus-circle"></i> +1 daha fazla özellik</li>
+                        </ul>
+                        <button class="btn buy-btn">Satın Al</button>
+                    </div>
+                    </div>
+            </div>
+        </section>
 
-        <div class="faq-item">
-          <h3 class="faq-question">Hangi Minecraft sürümlerini destekliyorsunuz?</h3>
-          <div class="faq-answer">
-            <p>Sunucumuz Minecraft Java Edition 1.16.5 sürümünü tam olarak desteklemektedir. Ayrıca, geriye dönük uyumluluk sayesinde 1.8'den güncel 1.21.x sürümlerine kadar olan çoğu sürümle bağlanabilirsiniz. Bedrock Edition desteği için yukarıdaki bağlantı adımlarını deneyebilirsiniz.</p>
-          </div>
-        </div>
+        <section class="content-section rules-section" id="rules">
+            <div class="container">
+                <h2 class="section-title">Sunucu Kuralları <span class="neon-line"></span></h2>
+                <p class="section-description">Keyifli bir oyun deneyimi için tüm oyuncularımızın aşağıdaki kurallara uyması gerekmektedir. Kurallara uymayan oyunculara uyarı, geçici veya kalıcı yasaklama uygulanabilir.</p>
+                <ul class="rule-list">
+                    <li><i class="fas fa-ban"></i> <strong>1. Saygı ve Ahlak Kuralları:</strong> Hakaret, küfür, argo ve her türlü ayrımcı söylem yasaktır. Herkesin birbirine saygılı olması beklenir.</li>
+                    <li><i class="fas fa-bug"></i> <strong>2. Hile ve Exploit:</strong> Hile, bug veya oyun açığı (exploit) kullanmak kesinlikle yasaktır. Adil oyun prensibi esastır.</li>
+                    <li><i class="fas fa-ad"></i> <strong>3. Reklam Yasağı:</strong> Başka sunucu, site, Discord sunucusu vb. reklam yapmak yasaktır.</li>
+                    <li><i class="fas fa-comments"></i> <strong>4. Spam ve Flood:</strong> Sohbeti gereksiz yere meşgul eden spam veya flood yapmak yasaktır.</li>
+                    <li><i class="fas fa-gavel"></i> <strong>5. Yapı ve Davranışlar:</strong> Başkalarını rahatsız edici, ahlaka aykırı inşaatlar veya davranışlarda bulunmak yasaktır.</li>
+                    <li><i class="fas fa-lock"></i> <strong>6. Hesap Güvenliği:</strong> Hesap güvenliğinizden siz sorumlusunuz. Hesap paylaşımı önerilmez ve doğacak sorunlardan sunucu sorumlu değildir.</li>
+                    <li><i class="fas fa-exclamation-triangle"></i> <strong>7. Yönetim Kararları:</strong> Yönetim ekibinin kararlarına saygı gösterin. Anlaşmazlıklarda Discord üzerinden iletişime geçin.</li>
+                    <li><i class="fas fa-server"></i> <strong>8. Sunucu Performansı:</strong> Sunucu kaynaklarını aşırı kullanacak otomatik sistemler kurmak yasaktır (örn: aşırı lag yapan farm'lar).</li>
+                    <li><i class="fas fa-user-secret"></i> <strong>9. Kişisel Bilgi Paylaşımı:</strong> Gerçek hayata dair kişisel bilgi paylaşımı (adres, telefon vb.) yasaktır.</li>
+                    <li><i class="fas fa-camera"></i> <strong>10. İhbar:</strong> Herhangi bir kural ihlali fark ettiğinizde ekran görüntüsü veya video alarak yönetime bildirin.</li>
+                </ul>
+            </div>
+        </section>
 
-        <div class="faq-item">
-          <h3 class="faq-question">Web sitesinde hesap oluşturmak zorunda mıyım?</h3>
-          <div class="faq-answer">
-            <p>Hayır, sunucumuza katılmak için web sitemizde hesap oluşturmanız gerekmez. Ancak mağaza alışverişleri veya özel bazı etkinlikler için Discord hesabınızla ilişkilendirme yapmanız istenebilir.</p>
-          </div>
-        </div>
+        <section class="content-section faq-section" id="faq">
+            <div class="container">
+                <h2 class="section-title">Sıkça Sorulan Sorular (SSS) <span class="neon-line"></span></h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <h3 class="faq-question">Senta Survival sunucusuna nasıl katılabilirim?</h3>
+                        <div class="faq-answer">
+                            <p><strong>Java Edition için:</strong></p>
+                            <ol>
+                                <li>Minecraft Java Edition'ı açın.</li>
+                                <li>"Çok Oyunculu" (Multiplayer) seçeneğine tıklayın.</li>
+                                <li>"Sunucu Ekle" (Add Server) butonuna basın.</li>
+                                <li>Sunucu Adı: <code>Senta Survival</code></li>
+                                <li>Sunucu Adresi: <code>rigosurvival.aternos.me:61460</code> yazın.</li>
+                                <li>"Tamamlandı" (Done) diyerek sunucuyu kaydedin ve bağlanın.</li>
+                            </ol>
+                            <p><strong>Bedrock Edition için (Alternatif IP - Eğer destekleniyorsa):</strong></p>
+                            <ol>
+                                <li>Minecraft Bedrock Edition'ı açın.</li>
+                                <li>"Oyna" (Play) menüsünden "Sunucular" (Servers) sekmesine gidin.</li>
+                                <li>"Sunucu Ekle" (Add Server) butonuna basın.</li>
+                                <li>Sunucu Adresi: <code>rigosurvival.aternos.me</code></li>
+                                <li>Port: <code>61460</code> (Genellikle otomatik gelir, gelmezse manuel girin)</li>
+                                <li>Sunucuyu kaydedin ve bağlanın.</li>
+                            </ol>
+                        </div>
+                    </div>
 
-        <div class="faq-item">
-          <h3 class="faq-question">Sunucuda hangi kurallar geçerli?</h3>
-          <div class="faq-answer">
-            <p>Sunucu kurallarımızın tamamına <a href="#rules">Kurallar</a> bölümümüzden ulaşabilirsiniz. Genel olarak, küfür, hile, spam ve rahatsız edici davranışlar yasaktır. Adil ve saygılı bir oyun ortamını teşvik ediyoruz.</p>
-          </div>
-        </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">Sunucu ücretsiz mi?</h3>
+                        <div class="faq-answer">
+                            <p>Evet, Senta Survival sunucusuna katılım ve temel oyun deneyimi tamamen ücretsizdir. Daha gelişmiş özellikler ve destek için VIP paketlerimizi mağazamızdan inceleyebilirsiniz.</p>
+                        </div>
+                    </div>
 
-        <div class="faq-item">
-          <h3 class="faq-question">Bağlantı sorunu yaşıyorum, ne yapmalıyım?</h3>
-          <div class="faq-answer">
-            <p>Öncelikle internet bağlantınızı kontrol edin. Minecraft sürümünüzün sunucumuzun desteklediği aralıkta olduğundan emin olun. Antivirüs veya güvenlik duvarı programlarınızın Minecraft'ı engellemediğinden emin olun. Sorun devam ederse Discord sunucumuzdaki destek kanalından yardım isteyebilirsiniz.</p>
-          </div>
-        </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">Hangi Minecraft sürümlerini destekliyorsunuz?</h3>
+                        <div class="faq-answer">
+                            <p>Sunucumuz Minecraft Java Edition 1.16.5 sürümünü tam olarak desteklemektedir. Ayrıca, geriye dönük uyumluluk sayesinde 1.8'den güncel 1.21.x sürümlerine kadar olan çoğu sürümle bağlanabilirsiniz. Bedrock Edition desteği için yukarıdaki bağlantı adımlarını deneyebilirsiniz.</p>
+                        </div>
+                    </div>
 
-        <div class="faq-item">
-          <h3 class="faq-question">VIP paketleri neler içeriyor?</h3>
-          <div class="faq-answer">
-            <p>VIP paketlerimiz, oyun içi kozmetikler, özel komutlar, günlük ödüller, sohbet yetkileri ve öncelikli destek gibi birçok avantaj sunar. Detaylı bilgi için <a href="#store">Mağaza</a> bölümümüzü ziyaret edebilirsiniz.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+                    <div class="faq-item">
+                        <h3 class="faq-question">Web sitesinde hesap oluşturmak zorunda mıyım?</h3>
+                        <div class="faq-answer">
+                            <p>Hayır, sunucumuza katılmak için web sitemizde hesap oluşturmanız gerekmez. Ancak mağaza alışverişleri veya özel bazı etkinlikler için Discord hesabınızla ilişkilendirme yapmanız istenebilir.</p>
+                        </div>
+                    </div>
 
-  <footer>
-    <p>© 2025 Senta Survival | Tüm hakları saklıdır. | <a href="#">Gizlilik Politikası</a> | <a href="#">Kullanım Şartları</a></p>
-  </footer>
+                    <div class="faq-item">
+                        <h3 class="faq-question">Bağlantı sorunu yaşıyorum, ne yapmalıyım?</h3>
+                        <div class="faq-answer">
+                            <p>Öncelikle internet bağlantınızı kontrol edin. Minecraft sürümünüzün sunucumuzun desteklediği aralıkta olduğundan emin olun. Antivirüs veya güvenlik duvarı programlarınızın Minecraft'ı engellemediğinden emin olun. Sorun devam ederse Discord sunucumuzdaki destek kanalından yardım isteyebilirsiniz.</p>
+                        </div>
+                    </div>
 
-  <script src="script.js"></script>
+                    <div class="faq-item">
+                        <h3 class="faq-question">VIP paketleri neler içeriyor?</h3>
+                        <div class="faq-answer">
+                            <p>VIP paketlerimiz, oyun içi kozmetikler, özel komutlar, günlük ödüller, sohbet yetkileri ve öncelikli destek gibi birçok avantaj sunar. Detaylı bilgi için <a href="#store">Mağaza</a> bölümümüzü ziyaret edebilirsiniz.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">Mobil cihazdan oynayabilir miyim?</h3>
+                        <div class="faq-answer">
+                            <p>Minecraft Bedrock Edition'a sahip mobil cihazlar üzerinden sunucumuza bağlanabilirsiniz. Yukarıdaki "Nasıl Katılırım?" bölümündeki Bedrock adımlarını takip edebilirsiniz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section news-section" id="news">
+            <div class="container">
+                <h2 class="section-title">Sunucu Haberleri <span class="neon-line"></span></h2>
+                <p class="section-description">En son çıkan güncellemeler ve bloglardan haberdar olun!</p>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div class="news-meta">
+                            <span class="news-category">Genel</span>
+                            <span class="news-date">28 Haziran 2025</span>
+                        </div>
+                        <h3>Güncelleme - 1.1</h3>
+                        <p>Paket kaybı sorunları giderildi, yeni mini oyunlar eklendi ve performans iyileştirmeleri yapıldı. Detaylar için blog yazımızı okuyun!</p>
+                        <a href="#" class="read-more-btn">Daha Fazla Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-meta">
+                            <span class="news-category">Etkinlik</span>
+                            <span class="news-date">20 Haziran 2025</span>
+                        </div>
+                        <h3>Yaz Etkinliği Başladı!</h3>
+                        <p>Sunucumuzda büyük yaz etkinliği başladı! Özel itemler, XP bonusları ve daha fazlası için hemen katılın.</p>
+                        <a href="#" class="read-more-btn">Daha Fazla Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    </div>
+                <button class="btn all-news-btn">Tüm Haberleri Görüntüle</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Senta Survival | Tüm hakları saklıdır. | 
+                <a href="#">Gizlilik Politikası</a> | 
+                <a href="#">Kullanım Şartları</a>
+            </p>
+            <div class="social-links">
+                <a href="https://discord.gg/SentaSurvival" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
+                <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
