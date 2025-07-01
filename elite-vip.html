@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elite VIP Detayları - EmberRise</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Bu sayfaya özel ek stil ayarları */
+        .package-detail-section {
+            padding: 80px 0;
+            text-align: center;
+            color: #f0f0f0;
+            min-height: 80vh; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .package-detail-card {
+            background: linear-gradient(145deg, rgba(29, 31, 35, 0.95), rgba(45, 49, 56, 0.95));
+            border: 2px solid #333;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 800px;
+            margin: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+        .package-detail-card h2 {
+            color: #cc00ff; /* Mor tonu */
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(204, 0, 255, 0.6);
+        }
+        .package-detail-card .price {
+            font-size: 2.5em;
+            color: #00ffcc; 
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
+        }
+        .package-detail-card p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .package-detail-card h3 {
+            color: #cc00ff;
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+        .package-detail-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .package-detail-card ul li {
+            font-size: 1.05em;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            line-height: 1.4;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(204, 0, 255, 0.3); /* Mor */
+            flex-basis: calc(50% - 15px);
+            box-sizing: border-box;
+        }
+        .package-detail-card ul li i {
+            color: #cc00ff; /* Mor */
+            margin-right: 12px;
+            font-size: 1.3em;
+            min-width: 25px;
+        }
+        .package-detail-card .btn-container {
+            text-align: center;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .package-detail-card .btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .package-detail-card .btn.discord-btn {
+            background-color: #7289DA; 
+            color: #fff;
+            border: 2px solid #7289DA;
+        }
+        .package-detail-card .btn.discord-btn:hover {
+            transform: translateY(-3px);
+            background-color: #677bc4;
+            box-shadow: 0 8px 20px rgba(114, 137, 218, 0.4);
+        }
+        .package-detail-card .btn.back-btn {
+            background-color: transparent;
+            color: #cc00ff; 
+            border: 2px solid #cc00ff;
+        }
+        .package-detail-card .btn.back-btn:hover {
+            transform: translateY(-3px);
+            background-color: rgba(204, 0, 255, 0.1);
+            box-shadow: 0 8px 20px rgba(204, 0, 255, 0.2);
+        }
+        @media (max-width: 768px) {
+            .package-detail-card {
+                padding: 30px 20px;
+            }
+            .package-detail-card h2 {
+                font-size: 2.2em;
+            }
+            .package-detail-card .price {
+                font-size: 1.8em;
+            }
+            .package-detail-card ul li {
+                flex-basis: 100%;
+            }
+            .package-detail-card .btn-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="gradient-glow top-left"></div>
+    <div class="gradient-glow bottom-right"></div>
+
+    <header>
+        <nav class="container">
+            <div class="logo">EmberRise</div>
+            <ul class="menu" id="mainMenu">
+                <li><a href="index.html#hero">Ana Sayfa</a></li>
+                <li><a href="index.html#about">Hakkımızda</a></li>
+                <li><a href="index.html#features">Özellikler</a></li> 
+                <li><a href="index.html#store">Mağaza</a></li>
+                <li><a href="index.html#rules">Kurallar</a></li>
+                <li><a href="https://discord.gg/SentaSurvival" target="_blank" class="discord-btn-nav"><i class="fab fa-discord"></i> Discord</a></li>
+                <li><a href="index.html#faq">SSS</a></li>
+            </ul>
+            <div class="hamburger" id="hamburgerMenu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="package-detail-section">
+            <div class="container">
+                <div class="package-detail-card">
+                    <h2>Elite VIP</h2>
+                    <p class="price">₺249 <span style="font-size: 0.7em; color: #ccc;">(30 Gün)</span></p>
+                    <p>EmberRise'ın zirvesine çıkın! Elite VIP paketi, size sunucudaki en üst düzey ayrıcalıkları ve özel erişimi sunar. Gerçek bir lider gibi öne çıkın ve oyun deneyiminizi maksimuma taşıyın.</p>
+                    
+                    <h3>Paket İçeriği:</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> **Tüm Premium VIP Özellikleri:** Önceki paketlerdeki tüm avantajlara ek olarak Elite ayrıcalıklarına sahip olun.</li>
+                        <li><i class="fas fa-check-circle"></i> **Elite Chat Odası:** Discord sunucumuzdaki sadece Elite VIP'lere özel ve en elit sohbet kanalında yönetim ekibiyle bile doğrudan iletişim kurun.</li>
+                        <li><i class="fas fa-check-circle"></i> **10x Günlük Para Ödülü:** Her gün tam 10 kat daha fazla para kazanarak sunucu ekonomisinin hakimi olun.</li>
+                        <li><i class="fas fa-check-circle"></i> **24/7 Öncelikli Destek:** Herhangi bir sorununuz olduğunda anında ve en hızlı destek hizmetinden yararlanın.</li>
+                        <li><i class="fas fa-check-circle"></i> **Elite Bölge Erişimi:** Sadece Elite VIP'lere özel, nadir kaynakların ve benzersiz yapıların bulunduğu bölgelere erişim sağlayın.</li>
+                        <li><i class="fas fa-check-circle"></i> **Özel Pet ve Binekler:** Sadece size özel, eşsiz görünümlü ve yetenekli petler veya binekler ile maceralarınıza çıkın. (Eğer sunucuda bu özellikler varsa ekle)</li>
+                        <li><i class="fas fa-check-circle"></i> **Daha Fazla Warp ve Ev Setleme Hakkı:** Sunucudaki en fazla ışınlanma noktası ve ev setleme hakkına sahip olun.</li>
+                        <li><i class="fas fa-check-circle"></i> **Oyuncu Başına Ek Envanter Slotu:** Envanterinizde daha fazla eşya taşıyarak toplama ve keşif maceralarınızı kolaylaştırın.</li>
+                    </ul>
+
+                    <p style="margin-top: 30px; font-size: 1.2em; color: #ffda00; font-weight: bold;">Bu eşsiz paketi satın almak veya diğer sorularınız için Discord sunucumuza gelerek yetkililerle iletişime geçebilirsiniz!</p>
+
+                    <div class="btn-container">
+                        <a href="https://discord.gg/SentaSurvival" target="_blank" class="btn discord-btn"><i class="fab fa-discord"></i> Discord Sunucumuza Katıl</a>
+                        <a href="index.html#store" class="btn back-btn">Mağazaya Geri Dön</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 EmberRise | Tüm hakları saklıdır. | 
+                <a href="index.html#">Gizlilik Politikası</a> | 
+                <a href="index.html#">Kullanım Şartları</a>
+            </p>
+            <div class="social-links">
+                <a href="https://discord.gg/SentaSurvival" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
+                <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://instagram.com/anitkabirr" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
